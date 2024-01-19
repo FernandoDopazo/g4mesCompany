@@ -8,7 +8,9 @@ class gameController extends Controller
 {
     public function index()
     {
-        return view ('index');
+        $registered_games = Game::all();
+
+        return view('index', compact('registered_games'));
     }
     public function create()
     {
@@ -53,4 +55,5 @@ class gameController extends Controller
     {
         return view ('console');
     }
+
 }
